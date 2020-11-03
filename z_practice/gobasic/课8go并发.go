@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sync"
+	"time"
 )
 
 var (
@@ -68,7 +69,11 @@ func main() {
 	//通信3：select
 	intchan := make(chan int, 10)
 	for i := 0; i < 10; i++ {
-		intchan <- i
+
+		go func(i int) {
+			time.Sleep(time.Second * 20)
+			intchan <- i
+		}(i)
 	}
 	strchan := make(chan string, 10)
 	for i := 0; i < 10; i++ {

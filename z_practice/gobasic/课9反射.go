@@ -6,8 +6,8 @@ import (
 )
 
 type Student struct {
-	name string `json: "n"`
-	age  int    `json: "a"`
+	name string `json:"n"`
+	age  int    `json:"a"`
 }
 
 func (s Student) P() {

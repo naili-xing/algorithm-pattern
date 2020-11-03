@@ -1,28 +1,19 @@
 package main
-import "fmt"
 
-func twoSum(nums []int, target int) []int {
-
-	res := make(map[int]int)
-
-	for i:=0;i<len(nums);i++{
-		k := target-nums[i]
-		res[k] = i
-	}
-
-	ress := []int{}
-
-	for i:=0;i<len(nums);i++{
-		k := nums[i]
-		if _,ok:=res[k];ok{
-			ress = append(ress, i)
-			ress = append(ress, res[k])
-			return ress
-		}
-	}
-	return []int{}
-}
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-	fmt.Println(isValid("(])"))
+
+	time.AfterFunc(3*time.Second, func() {
+		fmt.Println("expired")
+	})
+
+	fmt.Println("reached")
+	fmt.Println("reached")
+	fmt.Println("reached")
+	fmt.Println("reached")
+	time.Sleep(time.Second * 10)
 }
